@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { InputField } from "./InputField";
+import { IconType } from "react-icons";
 
 // Styles
 const SignupContainer = styled.form`
@@ -16,20 +17,28 @@ const Blurb = styled.h2`
 `;
 
 // Types
-interface LoginPropsType {
+interface loginPropsType {
   loginShowStatus: boolean;
   info: {
     title: string;
     blurb: string;
+    [key: string]: any;
   };
 }
 
-export const LoginSignupForm = ({ loginShowStatus, info }: LoginPropsType) => {
+interface inputType {
+  icon: IconType;
+  text: string;
+}
+
+export const LoginSignupForm = ({ loginShowStatus, info }: loginPropsType) => {
   return (
     <SignupContainer>
-      <Title>Create your account</Title>
-      <Blurb>Created for developers by developers</Blurb>
-      <InputField />
+      <Title>{info.title}</Title>
+      <Blurb>{info.blurb}</Blurb>
+      {info.inputs.map((input: inputType) => (
+        <InputField key={input.text} input={input} />
+      ))}
     </SignupContainer>
   );
 };

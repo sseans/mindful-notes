@@ -1,7 +1,11 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { LoginSignupForm } from "../Components/Login-Signup/LoginSignupForm";
+import { GoPerson } from "react-icons/go";
+import { IoMail } from "react-icons/io5";
+import { MdVpnKey } from "react-icons/md";
 
+// Styles
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -10,7 +14,6 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
 `;
-
 const Card = styled.div`
   width: 400px;
   height: 500px;
@@ -23,7 +26,6 @@ const Card = styled.div`
   border: 1px solid rgba(255, 255, 255, 0.125);
   color: #333131;
 `;
-
 const FooterText = styled.div`
   font-size: 1.2rem;
   font-weight: 400;
@@ -40,16 +42,27 @@ const FooterButton = styled.button`
 interface propInfoType {
   title: string;
   blurb: string;
+  [key: string]: any;
 }
 
+// Variables
 const loginInfo: propInfoType = {
   title: "Log in to your account",
   blurb: "Get back up to speed with your notes!",
+  inputs: [
+    { icon: IoMail, text: "email address" },
+    { icon: MdVpnKey, text: "password" },
+  ],
 };
 
 const signupInfo: propInfoType = {
   title: "Create your account",
   blurb: "Start making some notes now!",
+  inputs: [
+    { icon: GoPerson, text: "username" },
+    { icon: IoMail, text: "email address" },
+    { icon: MdVpnKey, text: "password" },
+  ],
 };
 
 const LoginSignupSplash: React.FC = () => {
