@@ -18,10 +18,10 @@ const Blurb = styled.h2`
 
 // Types
 interface LoginProps {
-  loginSignupStatus: string;
+  loginShowStatus: boolean;
 }
 
-export const LoginSignupForm = ({ loginSignupStatus }: LoginProps) => {
+export const LoginSignupForm = ({ loginShowStatus }: LoginProps) => {
   return (
     <SignupContainer>
       <Title>Create your account</Title>

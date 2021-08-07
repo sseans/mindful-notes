@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { LoginSignupForm } from "../Components/Login-Signup/LoginSignupForm";
 
@@ -24,12 +24,24 @@ const Card = styled.div`
   color: #333131;
 `;
 
+const FooterText = styled.div``;
+const FooterButton = styled.button``;
+
 const LoginSignupSplash: React.FC = () => {
-  const [loginSignupStatus, setLoginSignupStatus] = useState("signup");
+  const [loginShowStatus, setLoginShowStatus] = useState(false);
+
   return (
     <Container>
       <Card>
-        <LoginSignupForm loginSignupStatus={loginSignupStatus} />
+        <LoginSignupForm loginShowStatus={loginShowStatus} />
+        <FooterText>
+          {loginShowStatus
+            ? "Dont have an account?"
+            : "Already have an account?"}
+          <FooterButton onClick={() => setLoginShowStatus(!loginShowStatus)}>
+            {loginShowStatus ? "Sign Up" : "Sign In"}
+          </FooterButton>
+        </FooterText>
       </Card>
     </Container>
   );
