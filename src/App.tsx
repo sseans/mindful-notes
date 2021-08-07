@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Login from "./Pages/Login";
+import LoginSignupSplash from "./Pages/LoginSignupSplash";
 
 const AppContainer = styled.h1`
   font-size: 3rem;
@@ -17,7 +17,7 @@ const AppContainer = styled.h1`
 const App: React.FC = () => {
   return (
     <AppContainer>
-      <Login />
+      <LoginSignupSplash />
     </AppContainer>
   );
 };
