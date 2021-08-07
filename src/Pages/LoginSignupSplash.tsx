@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { LoginSignupForm } from "../Components/Login-Signup/LoginSignupForm";
 
@@ -24,8 +24,33 @@ const Card = styled.div`
   color: #333131;
 `;
 
-const FooterText = styled.div``;
-const FooterButton = styled.button``;
+const FooterText = styled.div`
+  font-size: 1.2rem;
+  font-weight: 400;
+`;
+const FooterButton = styled.button`
+  background-color: transparent;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: underline;
+`;
+
+// Types
+interface propInfoType {
+  title: string;
+  blurb: string;
+}
+
+const loginInfo: propInfoType = {
+  title: "Log in to your account",
+  blurb: "Get back up to speed with your notes!",
+};
+
+const signupInfo: propInfoType = {
+  title: "Create your account",
+  blurb: "Start making some notes now!",
+};
 
 const LoginSignupSplash: React.FC = () => {
   const [loginShowStatus, setLoginShowStatus] = useState(false);
@@ -33,11 +58,14 @@ const LoginSignupSplash: React.FC = () => {
   return (
     <Container>
       <Card>
-        <LoginSignupForm loginShowStatus={loginShowStatus} />
+        <LoginSignupForm
+          loginShowStatus={loginShowStatus}
+          info={loginShowStatus ? loginInfo : signupInfo}
+        />
         <FooterText>
           {loginShowStatus
-            ? "Dont have an account?"
-            : "Already have an account?"}
+            ? "Dont have an account? "
+            : "Already have an account? "}
           <FooterButton onClick={() => setLoginShowStatus(!loginShowStatus)}>
             {loginShowStatus ? "Sign Up" : "Sign In"}
           </FooterButton>

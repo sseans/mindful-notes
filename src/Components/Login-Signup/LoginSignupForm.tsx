@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { InputField } from "./InputField";
 
 // Styles
-
 const SignupContainer = styled.form`
   height: fit-content;
   width: 100%;
@@ -17,11 +16,15 @@ const Blurb = styled.h2`
 `;
 
 // Types
-interface LoginProps {
+interface LoginPropsType {
   loginShowStatus: boolean;
+  info: {
+    title: string;
+    blurb: string;
+  };
 }
 
-export const LoginSignupForm = ({ loginShowStatus }: LoginProps) => {
+export const LoginSignupForm = ({ loginShowStatus, info }: LoginPropsType) => {
   return (
     <SignupContainer>
       <Title>Create your account</Title>
