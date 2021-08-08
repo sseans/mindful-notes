@@ -47,8 +47,6 @@ export const LoginSignupForm = ({
 }: loginPropsType) => {
   const [formDetails, setFormDetails] = useState({});
 
-  function formSubmit() {}
-
   return (
     <SignupContainer
       onSubmit={(e) => {
