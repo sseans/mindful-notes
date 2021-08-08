@@ -4,6 +4,7 @@ import { LoginSignupForm } from "../Components/Login-Signup/LoginSignupForm";
 import { GoPerson } from "react-icons/go";
 import { IoMail } from "react-icons/io5";
 import { MdVpnKey } from "react-icons/md";
+import { IconType } from "react-icons";
 
 // Styles
 const Container = styled.div`
@@ -39,10 +40,15 @@ const FooterButton = styled.button`
 `;
 
 // Types
+type inputType = {
+  icon: IconType;
+  text: string;
+};
+
 interface propInfoType {
   title: string;
   blurb: string;
-  [key: string]: any;
+  inputs: inputType[];
 }
 
 // Variables

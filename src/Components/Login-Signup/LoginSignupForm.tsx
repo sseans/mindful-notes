@@ -22,7 +22,7 @@ interface loginPropsType {
   info: {
     title: string;
     blurb: string;
-    [key: string]: any;
+    inputs: inputType[];
   };
 }
 

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { FC, ReactElement, useState } from "react";
 import styled from "styled-components";
 import { IconType } from "react-icons";
+import { JsxChild } from "typescript";
 
 const Container = styled.div`
   width: 100%;
@@ -19,7 +20,7 @@ interface propsType {
   };
 }
 
-export const InputField = ({ input }: propsType) => {
+export const InputField: FC<propsType> = ({ input }) => {
   const [inputText, setInputText] = useState("");
   return (
     <Container>
