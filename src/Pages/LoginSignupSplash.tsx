@@ -49,6 +49,7 @@ interface propInfoType {
   title: string;
   blurb: string;
   inputs: inputType[];
+  buttonText: string;
 }
 
 // Variables
@@ -59,6 +60,7 @@ const loginInfo: propInfoType = {
     { icon: IoMail, text: "email address" },
     { icon: MdVpnKey, text: "password" },
   ],
+  buttonText: "Log into my account",
 };
 
 const signupInfo: propInfoType = {
@@ -69,10 +71,19 @@ const signupInfo: propInfoType = {
     { icon: IoMail, text: "email address" },
     { icon: MdVpnKey, text: "password" },
   ],
+  buttonText: "Create my account",
 };
 
 const LoginSignupSplash: React.FC = () => {
   const [loginShowStatus, setLoginShowStatus] = useState(false);
+
+  function login(message: string) {
+    console.log(message);
+  }
+
+  function signup(message: string) {
+    console.log(message);
+  }
 
   return (
     <Container>
@@ -80,6 +91,7 @@ const LoginSignupSplash: React.FC = () => {
         <LoginSignupForm
           loginShowStatus={loginShowStatus}
           info={loginShowStatus ? loginInfo : signupInfo}
+          submitFunction={loginShowStatus ? login : signup}
         />
         <FooterText>
           {loginShowStatus

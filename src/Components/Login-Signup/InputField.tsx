@@ -1,7 +1,6 @@
-import React, { FC, ReactElement, useState } from "react";
+import { FC, ReactElement, useState } from "react";
 import styled from "styled-components";
 import { IconType } from "react-icons";
-import { JsxChild } from "typescript";
 
 const Container = styled.div`
   width: 100%;
@@ -18,9 +17,15 @@ interface propsType {
     icon: IconType;
     text: string;
   };
+  formDetails: object;
+  setFormDetails: Function;
 }
 
-export const InputField: FC<propsType> = ({ input }) => {
+export const InputField: FC<propsType> = ({
+  input,
+  formDetails,
+  setFormDetails,
+}): ReactElement => {
   const [inputText, setInputText] = useState("");
   return (
     <Container>
@@ -28,7 +33,9 @@ export const InputField: FC<propsType> = ({ input }) => {
         <input.icon />
       </Icon>
       <Input
-        type="text"
+        type={input.text === "password" ? "password" : "text"}
+        required
+        placeholder={input.text}
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
       ></Input>
