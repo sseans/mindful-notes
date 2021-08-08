@@ -53,7 +53,7 @@ export const LoginSignupForm = ({
     <SignupContainer
       onSubmit={(e) => {
         e.preventDefault();
-        submitFunction(info.title);
+        submitFunction(info.title, formDetails);
       }}
     >
       <Title>{info.title}</Title>

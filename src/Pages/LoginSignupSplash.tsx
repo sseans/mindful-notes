@@ -57,7 +57,7 @@ const loginInfo: propInfoType = {
   title: "Log in to your account",
   blurb: "Get back up to speed with your notes!",
   inputs: [
-    { icon: IoMail, text: "email address" },
+    { icon: IoMail, text: "email" },
     { icon: MdVpnKey, text: "password" },
   ],
   buttonText: "Log into my account",
@@ -68,7 +68,7 @@ const signupInfo: propInfoType = {
   blurb: "Start making some notes now!",
   inputs: [
     { icon: GoPerson, text: "username" },
-    { icon: IoMail, text: "email address" },
+    { icon: IoMail, text: "email" },
     { icon: MdVpnKey, text: "password" },
   ],
   buttonText: "Create my account",
@@ -77,12 +77,12 @@ const signupInfo: propInfoType = {
 const LoginSignupSplash: React.FC = () => {
   const [loginShowStatus, setLoginShowStatus] = useState(false);
 
-  function login(message: string) {
-    console.log(message);
+  function login(message: string, formDetails: {}) {
+    console.log(message, formDetails);
   }
 
-  function signup(message: string) {
-    console.log(message);
+  function signup(message: string, formDetails: {}) {
+    console.log(message, formDetails);
   }
 
   return (

@@ -37,7 +37,10 @@ export const InputField: FC<propsType> = ({
         required
         placeholder={input.text}
         value={inputText}
-        onChange={(e) => setInputText(e.target.value)}
+        onChange={(e) => {
+          setInputText(e.target.value);
+          setFormDetails({ ...formDetails, [input.text]: e.target.value });
+        }}
       ></Input>
     </Container>
   );
