@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import styled from "styled-components";
 import { LoginSignupForm } from "../Components/Login-Signup/LoginSignupForm";
 import { GoPerson } from "react-icons/go";
@@ -74,7 +74,7 @@ const signupInfo: propInfoType = {
   buttonText: "Create my account",
 };
 
-const LoginSignupSplash: React.FC = () => {
+const LoginSignupSplash: FC = () => {
   const [loginShowStatus, setLoginShowStatus] = useState(false);
 
   function login(message: string, formDetails: {}) {
@@ -89,7 +89,6 @@ const LoginSignupSplash: React.FC = () => {
     <Container>
       <Card>
         <LoginSignupForm
-          loginShowStatus={loginShowStatus}
           info={loginShowStatus ? loginInfo : signupInfo}
           submitFunction={loginShowStatus ? login : signup}
         />

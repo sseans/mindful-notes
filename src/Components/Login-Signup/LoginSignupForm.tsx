@@ -1,8 +1,8 @@
-import React from "react";
 import styled from "styled-components";
 import { InputField } from "./InputField";
 import { IconType } from "react-icons";
 import { useState } from "react";
+import { FC } from "react";
 
 // Styles
 const SignupContainer = styled.form`
@@ -30,7 +30,6 @@ interface inputType {
 }
 
 interface loginPropsType {
-  loginShowStatus: boolean;
   info: {
     title: string;
     blurb: string;
@@ -40,11 +39,10 @@ interface loginPropsType {
   submitFunction: Function;
 }
 
-export const LoginSignupForm = ({
-  loginShowStatus,
+export const LoginSignupForm: FC<loginPropsType> = ({
   info,
   submitFunction,
-}: loginPropsType) => {
+}) => {
   const [formDetails, setFormDetails] = useState({});
 
   return (

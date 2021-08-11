@@ -1,4 +1,4 @@
-import { FC, ReactElement, useState } from "react";
+import { FC, useState } from "react";
 import styled from "styled-components";
 import { IconType } from "react-icons";
 
@@ -25,7 +25,7 @@ export const InputField: FC<propsType> = ({
   input,
   formDetails,
   setFormDetails,
-}): ReactElement => {
+}) => {
   const [inputText, setInputText] = useState("");
   return (
     <Container>
