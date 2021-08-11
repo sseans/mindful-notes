@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { InputField } from "./InputField";
-import { IconType } from "react-icons";
 import { useState } from "react";
 import { FC } from "react";
+import { inputType, propInfoType } from "../../Pages/LoginSignupSplash";
 
 // Styles
 const SignupContainer = styled.form`
@@ -21,21 +21,13 @@ const SubmitButton = styled.button`
   height: 50px;
   border-radius: 12px;
   background-color: #fff;
+  cursor: pointer;
 `;
 
 // Types
-interface inputType {
-  icon: IconType;
-  text: string;
-}
 
 interface loginPropsType {
-  info: {
-    title: string;
-    blurb: string;
-    inputs: inputType[];
-    buttonText: string;
-  };
+  info: propInfoType;
   submitFunction: Function;
 }
 

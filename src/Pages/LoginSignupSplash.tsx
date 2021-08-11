@@ -37,15 +37,16 @@ const FooterButton = styled.button`
   font-size: 1.1rem;
   font-weight: bold;
   text-decoration: underline;
+  cursor: pointer;
 `;
 
 // Types
-type inputType = {
+export type inputType = {
   icon: IconType;
   text: string;
 };
 
-interface propInfoType {
+export interface propInfoType {
   title: string;
   blurb: string;
   inputs: inputType[];
@@ -81,7 +82,7 @@ const LoginSignupSplash: FC = () => {
     console.log(message, formDetails);
   }
 
-  function signup(message: string, formDetails: {}) {
+  function signup(message: string, formDetails: {}): void {
     console.log(message, formDetails);
   }
 
