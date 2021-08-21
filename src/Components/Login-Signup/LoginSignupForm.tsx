@@ -25,7 +25,6 @@ const SubmitButton = styled.button`
 `;
 
 // Types
-
 interface loginPropsType {
   info: propInfoType;
   submitFunction: Function;
