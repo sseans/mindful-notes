@@ -4,12 +4,31 @@ import { IconType } from "react-icons";
 
 const Container = styled.div`
   width: 100%;
-  height: fit-content;
-  border: lime 1px solid;
+  height: 70px;
+  border-radius: 8px;
+  margin: 20px 0;
+  border: #ffffffb3 1px solid;
   display: flex;
 `;
-const Icon = styled.div``;
-const Input = styled.input``;
+const Icon = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  min-width: 70px;
+  color: #ffffffb3;
+`;
+const Input = styled.input`
+  width: 100%;
+  margin-right: 70px;
+  background-color: transparent;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+  font-size: 1.2rem;
+  color: #333131;
+`;
 
 // Types
 interface propsType {

@@ -20,6 +20,7 @@ const Card = styled.div`
   height: 500px;
   max-width: 85%;
   max-height: 60%;
+  padding: 10px;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   background-color: rgba(218, 226, 241, 0.637);
@@ -30,6 +31,7 @@ const Card = styled.div`
 const FooterText = styled.div`
   font-size: 1.2rem;
   font-weight: 400;
+  margin: 15px 0;
 `;
 const FooterButton = styled.button`
   background-color: transparent;

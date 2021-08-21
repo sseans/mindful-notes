@@ -8,13 +8,14 @@ import { inputType, propInfoType } from "../../Pages/LoginSignupSplash";
 const SignupContainer = styled.form`
   height: fit-content;
   width: 100%;
-  border: red 1px solid;
 `;
 const Title = styled.h1`
   font-size: 2rem;
+  margin-bottom: 10px;
 `;
 const Blurb = styled.h2`
   font-size: 1.1rem;
+  margin-bottom: 10px;
 `;
 const SubmitButton = styled.button`
   width: 100%;
