@@ -27,7 +27,7 @@ const Input = styled.input`
     outline: none;
   }
   font-size: 1.2rem;
-  color: #333131;
+  /* color: #333131; */
 `;
 
 // Types
